@@ -1188,10 +1188,10 @@ TextureImporter:
       name: TitleSheet_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 112
-        width: 206
-        height: 64
+        x: 257
+        y: 159
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1208,13 +1208,13 @@ TextureImporter:
       name: TitleSheet_5
       rect:
         serializedVersion: 2
-        x: 463
-        y: 112
-        width: 206
-        height: 64
+        x: 257
+        y: 168
+        width: 79
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 79, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -1228,10 +1228,10 @@ TextureImporter:
       name: TitleSheet_6
       rect:
         serializedVersion: 2
-        x: 670
-        y: 112
-        width: 206
-        height: 64
+        x: 258
+        y: 146
+        width: 79
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1269,7 +1269,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 48
+        y: 176
         width: 206
         height: 64
       alignment: 0
@@ -1288,11 +1288,11 @@ TextureImporter:
       name: TitleSheet_9
       rect:
         serializedVersion: 2
-        x: 463
-        y: 48
-        width: 206
-        height: 64
-      alignment: 0
+        x: 266
+        y: 159
+        width: 7
+        height: 7
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []

@@ -14,7 +14,7 @@ public class PressStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("enter"))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene(sceneName: "OptionScreen");
         }
