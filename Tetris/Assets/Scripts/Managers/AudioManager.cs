@@ -27,9 +27,9 @@ public class AudioManager : MonoBehaviour
     {
         if (NewMusic != SelectType.SelectMusic)
         {
-            print(SelectType.SelectMusic);
             NewMusic = SelectType.SelectMusic;
         }
+
         if (CurrentMusic != NewMusic)
         {
             audioSource.Stop();

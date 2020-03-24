@@ -18,6 +18,8 @@ public class SelectType : MonoBehaviour
     private float MusicDiffernce = 24.5f;
 
     public static int SelectMusic = 0;
+    public int SelectMode = 0;
+    public static int GameMode = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -35,11 +37,13 @@ public class SelectType : MonoBehaviour
         {
             typeCursorLeft.transform.position = new Vector2(94,253);
             typeCursorRight.transform.position = new Vector2(180, 253);
+            SelectMode = 0;
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             typeCursorLeft.transform.position = new Vector2(234, 252);
             typeCursorRight.transform.position = new Vector2(320, 252);
+            SelectMode = 1;
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow) && NewMusicLocationLeft.y > BottomMusic)
@@ -61,6 +65,7 @@ public class SelectType : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            GameMode = SelectMode;
             SceneManager.LoadScene(sceneName: "GameScreen");
         }
     }
