@@ -6,7 +6,6 @@ public class PieceMovement : MonoBehaviour
 {
     private GameObject currentPiece;
     
-    private float CellSize = 10f;
     private Vector2 Tetromino = new Vector2(180f, 170f);
 
 
@@ -21,23 +20,23 @@ public class PieceMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Tetromino.x = Tetromino.x - CellSize;
+            Tetromino.x = Tetromino.x - Grid.CellSize;
             currentPiece.transform.position = Tetromino;
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Tetromino.x = Tetromino.x + CellSize;
+            Tetromino.x = Tetromino.x + Grid.CellSize;
             currentPiece.transform.position = Tetromino;
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            Tetromino.y = Tetromino.y - CellSize;
+            Tetromino.y = Tetromino.y - Grid.CellSize;
             currentPiece.transform.position = Tetromino;
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Tetromino.y = Tetromino.y + CellSize;
+            Tetromino.y = Tetromino.y + Grid.CellSize;
             currentPiece.transform.position = Tetromino;
         }
     }
