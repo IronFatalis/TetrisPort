@@ -6,7 +6,7 @@ public class PieceMovement : MonoBehaviour
 {
     private GameObject currentPiece;
     
-    private Vector2 Tetromino = new Vector2(180f, 170f);
+    private Vector2[] Tetromino = { new Vector2(180f, 170f), new Vector2(180f, 170f), new Vector2(180f, 170f), new Vector2(180f, 170f) };
 
 
     // Start is called before the first frame update
@@ -20,24 +20,52 @@ public class PieceMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Tetromino.x = Tetromino.x - Grid.CellSize;
-            currentPiece.transform.position = Tetromino;
+            for (int i = 0; i < 4; i++)
+            {
+                if (Tetromino[i].x > 130)
+                {
+                    Tetromino[i].x = Tetromino[i].x - Grid.CellSize;
+                    currentPiece.transform.position = Tetromino[i];
+                    if (i == 3)
+                    {
+                        Grid.PieceRow--;
+                    }
+                    print(Grid.NewPos[i]);
+                    print(Grid.PieceRow);
+                }
+            }
+            // 180 = 180 - 10;
+            // L130 - R230
+
+            
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Tetromino.x = Tetromino.x + Grid.CellSize;
-            currentPiece.transform.position = Tetromino;
+            for (int i = 0; i < 4; i++)
+            {
+                if (Tetromino[i].x < 220)
+                {
+                    Tetromino[i].x = Tetromino[i].x + Grid.CellSize;
+                    currentPiece.transform.position = Tetromino[i];
+                    if (i == 3)
+                    {
+                        Grid.PieceRow++;
+                    }
+                    print(Grid.NewPos[i]);
+                    print(Grid.PieceRow);
+                }
+            }
         }
-
-        if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
-            Tetromino.y = Tetromino.y - Grid.CellSize;
-            currentPiece.transform.position = Tetromino;
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            Tetromino.y = Tetromino.y + Grid.CellSize;
-            currentPiece.transform.position = Tetromino;
+            for (int i = 0; i < 4; i++)
+            {
+                if (Tetromino[i].y > -50)
+                {
+                    Tetromino[i].y = Tetromino[i].y - Grid.CellSize;
+                    currentPiece.transform.position = Tetromino[i];
+                }
+            }
         }
     }
 }
