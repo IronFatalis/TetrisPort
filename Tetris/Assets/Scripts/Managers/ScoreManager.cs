@@ -11,35 +11,35 @@ public class ScoreManager : MonoBehaviour
     public static string StrCurrentScore = "0";
     public int NumCurrentScore = Int32.Parse(StrCurrentScore);
 
-    private static string StrLevel = "01";
-    private int NumLevel = Int32.Parse(StrLevel);
+    public static string StrLevel = "01";
+    public int NumLevel = Int32.Parse(StrLevel);
 
-    private static string StrHiScore = "100000";
-    private int NumHiScore = Int32.Parse(StrHiScore);
+    public static string StrHiScore = "100000";
+    public int NumHiScore = Int32.Parse(StrHiScore);
 
-    private static string StrLine = "00";
-    private int NumLine = Int32.Parse(StrLine);
+    public static string StrLine = "00";
+    public static int NumLine = Int32.Parse(StrLine);
 
-    private static string StrTStat = "0";
-    static public int NumTStat = Int32.Parse(StrTStat);
+    public static string StrTStat = "0";
+    public static int NumTStat = Int32.Parse(StrTStat);
 
-    private static string StrJStat = "0";
-    private int NumJStat = Int32.Parse(StrJStat);
+    public static string StrJStat = "0";
+    public static int NumJStat = Int32.Parse(StrJStat);
 
-    private static string StrZStat = "0";
-    private int NumZStat = Int32.Parse(StrZStat);
+    public static string StrZStat = "0";
+    public static int NumZStat = Int32.Parse(StrZStat);
 
-    private static string StrOStat = "0";
-    private int NumOStat = Int32.Parse(StrOStat);
+    public static string StrOStat = "0";
+    public static int NumOStat = Int32.Parse(StrOStat);
 
-    private static string StrSStat = "0";
-    private int NumSStat = Int32.Parse(StrSStat);
+    public static string StrSStat = "0";
+    public static int NumSStat = Int32.Parse(StrSStat);
 
-    private static string StrLStat = "0";
-    private int NumLStat = Int32.Parse(StrLStat);
+    public static string StrLStat = "0";
+    public static int NumLStat = Int32.Parse(StrLStat);
 
-    private static string StrIStat = "0";
-    private int NumIStat = Int32.Parse(StrIStat);
+    public static string StrIStat = "0";
+    public static int NumIStat = Int32.Parse(StrIStat);
 
 
     // Start is called before the first frame update
