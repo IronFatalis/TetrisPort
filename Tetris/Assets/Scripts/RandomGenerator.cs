@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RandomGenerator : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class RandomGenerator : MonoBehaviour
 	private GameObject lStat;
 	private GameObject iStat;
 
+	private GameObject nextPiece;
+
+	Sprite T, J, Z, O, S, L, I;
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -25,6 +30,16 @@ public class RandomGenerator : MonoBehaviour
 		sStat = GameObject.Find("SStat");
 		lStat = GameObject.Find("LStat");
 		iStat = GameObject.Find("IStat");
+
+		nextPiece = GameObject.Find("NextPiece");
+
+		T = Resources.Load<Sprite>("Assets/Tiles/T.png");
+		J = Resources.Load<Sprite>("Assets/Tiles/J.png");
+		Z = Resources.Load<Sprite>("Assets/Tiles/Z.png");
+		O = Resources.Load<Sprite>("Assets/Tiles/O.png");
+		S = Resources.Load<Sprite>("Assets/Tiles/S.png");
+		L = Resources.Load<Sprite>("Assets/Tiles/L.png");
+		I = Resources.Load<Sprite>("Assets/Tiles/I.png");
 
 		SetNextPiece();
         SetCurrentPiece();
@@ -48,10 +63,37 @@ public class RandomGenerator : MonoBehaviour
         return mRandomPieceNext;
     }
 
-    void SetNextPiece()
-    {
-        mRandomPieceNext = (Random.Range(0, 7));
-    }
+	void SetNextPiece()
+	{
+		//mRandomPieceNext = (Random.Range(0, 7));
+		mRandomPieceNext = 0;
+		print(mRandomPieceNext);
+		switch (mRandomPieceNext)
+		{
+			case 0:
+				nextPiece.GetComponent<Image>().sprite = T;
+				print("switch");
+				break;
+			case 1:
+				nextPiece.GetComponent<Image>().sprite = J;
+				break;
+			case 2:
+				nextPiece.GetComponent<Image>().sprite = Z;
+				break;
+			case 3:
+				nextPiece.GetComponent<Image>().sprite = O;
+				break;
+			case 4:
+				nextPiece.GetComponent<Image>().sprite = S;
+				break;
+			case 5:
+				nextPiece.GetComponent<Image>().sprite = L;
+				break;
+			case 6:
+				nextPiece.GetComponent<Image>().sprite = I;
+				break;
+		}
+	}
 
     int GetCurrentPiece()
     {
@@ -67,37 +109,37 @@ public class RandomGenerator : MonoBehaviour
 			case 0:
 				ScoreManager.NumTStat += 1;
 				ScoreManager.StrTStat = ScoreManager.NumTStat.ToString().PadLeft(2, '0');
-				tStat.GetComponent<UnityEngine.UI.Text>().text = ScoreManager.StrTStat;
+				tStat.GetComponent<Text>().text = ScoreManager.StrTStat;
 				break;
 			case 1:
 				ScoreManager.NumJStat += 1;
 				ScoreManager.StrJStat = ScoreManager.NumJStat.ToString().PadLeft(2, '0');
-				jStat.GetComponent<UnityEngine.UI.Text>().text = ScoreManager.StrJStat;
+				jStat.GetComponent<Text>().text = ScoreManager.StrJStat;
 				break;
 			case 2:
 				ScoreManager.NumZStat += 1;
 				ScoreManager.StrZStat = ScoreManager.NumZStat.ToString().PadLeft(2, '0');
-				zStat.GetComponent<UnityEngine.UI.Text>().text = ScoreManager.StrZStat;
+				zStat.GetComponent<Text>().text = ScoreManager.StrZStat;
 				break;
 			case 3:
 				ScoreManager.NumOStat += 1;
 				ScoreManager.StrOStat = ScoreManager.NumOStat.ToString().PadLeft(2, '0');
-				oStat.GetComponent<UnityEngine.UI.Text>().text = ScoreManager.StrOStat;
+				oStat.GetComponent<Text>().text = ScoreManager.StrOStat;
 				break;
 			case 4:
 				ScoreManager.NumSStat += 1;
 				ScoreManager.StrSStat = ScoreManager.NumSStat.ToString().PadLeft(2, '0');
-				sStat.GetComponent<UnityEngine.UI.Text>().text = ScoreManager.StrSStat;
+				sStat.GetComponent<Text>().text = ScoreManager.StrSStat;
 				break;
 			case 5:
 				ScoreManager.NumLStat += 1;
 				ScoreManager.StrLStat = ScoreManager.NumLStat.ToString().PadLeft(2, '0');
-				lStat.GetComponent<UnityEngine.UI.Text>().text = ScoreManager.StrLStat;
+				lStat.GetComponent<Text>().text = ScoreManager.StrLStat;
 				break;
 			case 6:
 				ScoreManager.NumIStat += 1;
 				ScoreManager.StrIStat = ScoreManager.NumIStat.ToString().PadLeft(2, '0');
-				iStat.GetComponent<UnityEngine.UI.Text>().text = ScoreManager.StrIStat;
+				iStat.GetComponent<Text>().text = ScoreManager.StrIStat;
 				break;
 		}
 	}

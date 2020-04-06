@@ -56,7 +56,7 @@ public class PieceMovement : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow) || (Timer.PieceDrop >= Timer.DropTime))
         {
             for (int i = 0; i < 4; i++)
             {
@@ -66,6 +66,7 @@ public class PieceMovement : MonoBehaviour
                     currentPiece.transform.position = Tetromino[i];
                 }
             }
+            Timer.Reset();
         }
     }
 }
