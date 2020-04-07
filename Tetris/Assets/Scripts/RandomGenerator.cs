@@ -33,13 +33,13 @@ public class RandomGenerator : MonoBehaviour
 
 		nextPiece = GameObject.Find("NextPiece");
 
-		T = Resources.Load<Sprite>("Assets/Tiles/T.png");
-		J = Resources.Load<Sprite>("Assets/Tiles/J.png");
-		Z = Resources.Load<Sprite>("Assets/Tiles/Z.png");
-		O = Resources.Load<Sprite>("Assets/Tiles/O.png");
-		S = Resources.Load<Sprite>("Assets/Tiles/S.png");
-		L = Resources.Load<Sprite>("Assets/Tiles/L.png");
-		I = Resources.Load<Sprite>("Assets/Tiles/I.png");
+		T = Resources.Load<Sprite>("T");
+		J = Resources.Load<Sprite>("J");
+		Z = Resources.Load<Sprite>("Z");
+		O = Resources.Load<Sprite>("O");
+		S = Resources.Load<Sprite>("S");
+		L = Resources.Load<Sprite>("L");
+		I = Resources.Load<Sprite>("I");
 
 		SetNextPiece();
         SetCurrentPiece();
@@ -65,14 +65,12 @@ public class RandomGenerator : MonoBehaviour
 
 	void SetNextPiece()
 	{
-		//mRandomPieceNext = (Random.Range(0, 7));
-		mRandomPieceNext = 0;
+		mRandomPieceNext = (Random.Range(0, 7));
 		print(mRandomPieceNext);
 		switch (mRandomPieceNext)
 		{
 			case 0:
 				nextPiece.GetComponent<Image>().sprite = T;
-				print("switch");
 				break;
 			case 1:
 				nextPiece.GetComponent<Image>().sprite = J;
@@ -95,7 +93,7 @@ public class RandomGenerator : MonoBehaviour
 		}
 	}
 
-    int GetCurrentPiece()
+    public static int GetCurrentPiece()
     {
         return mRandomPieceCurrent;
     }
