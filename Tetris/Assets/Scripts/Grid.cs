@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
+	GameObject lockGrid;
+	SpriteRenderer Render;
+	Texture2D BlockTex;
+	Sprite LockedBlock;
+	public GameObject curCanvas;
+	public GameObject piecePrefab;
+
 	private int GridRows = 10;
 	private int GridColumns = 24;
 	static public int PieceColumn = 1;
 	static public int PieceRow = 5;
 	static public int CellSize = 10;
 	static int MaxBlocks = 4;
-	//static public int[] CheckLR;
-	//static public int[] CheckUD;
-	static public bool[][] LockedPiece;
-	static public Vector2Int StartLocation = new Vector2Int(110, 260);
 
+	static public Vector2Int StartLocation = new Vector2Int(150, 260);
 	static public Vector2Int[] NewPos = new Vector2Int[MaxBlocks];
 	static public Vector2Int[] OldPos = new Vector2Int[MaxBlocks];
 
@@ -65,5 +69,25 @@ public class Grid : MonoBehaviour
 			//			60
 			NewPos[p] = new Vector2Int((PieceRow * CellSize) + (OldPos[p].x), (PieceColumn *CellSize) + (OldPos[p].y));
 		}
+	}
+
+
+	public void LockedGrid()
+	{
+		Vector3 pos = new Vector3(((PieceRow + OldPos[0].x) * CellSize) + StartLocation.x, ((PieceColumn - OldPos[0].y) * CellSize) + StartLocation.y,0);
+		GameObject newOBJ = Instantiate<GameObject>(piecePrefab, pos, Quaternion.identity);
+		newOBJ.transform.parent = curCanvas.transform;
+
+		pos = new Vector3(((PieceRow + OldPos[1].x) * CellSize) + StartLocation.x, ((PieceColumn - OldPos[1].y) * CellSize) + StartLocation.y, 0);
+		newOBJ = Instantiate<GameObject>(piecePrefab, pos, Quaternion.identity);
+		newOBJ.transform.parent = curCanvas.transform;
+
+		pos = new Vector3(((PieceRow + OldPos[2].x) * CellSize) + StartLocation.x, ((PieceColumn - OldPos[2].y) * CellSize) + StartLocation.y, 0);
+		newOBJ = Instantiate<GameObject>(piecePrefab, pos, Quaternion.identity);
+		newOBJ.transform.parent = curCanvas.transform;
+
+		pos = new Vector3(((PieceRow + OldPos[3].x) * CellSize) + StartLocation.x, ((PieceColumn - OldPos[3].y) * CellSize) + StartLocation.y, 0);
+		newOBJ = Instantiate<GameObject>(piecePrefab, pos, Quaternion.identity);
+		newOBJ.transform.parent = curCanvas.transform;
 	}
 }

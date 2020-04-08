@@ -87,5 +87,12 @@ public class PieceMovement : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            nextPiece.GetComponent<Grid>().LockedGrid();
+        }
+
+
     }
 }
