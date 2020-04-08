@@ -63,31 +63,31 @@ public class RandomGenerator : MonoBehaviour
         return mRandomPieceNext;
     }
 
-	void SetNextPiece()
+	public void SetNextPiece()
 	{
 		mRandomPieceNext = (Random.Range(0, 7));
 		print(mRandomPieceNext);
 		switch (mRandomPieceNext)
 		{
-			case 0:
+			case 0:				
 				nextPiece.GetComponent<Image>().sprite = T;
 				break;
-			case 1:
+			case 1:				
 				nextPiece.GetComponent<Image>().sprite = J;
 				break;
-			case 2:
+			case 2:				
 				nextPiece.GetComponent<Image>().sprite = Z;
 				break;
-			case 3:
+			case 3:				
 				nextPiece.GetComponent<Image>().sprite = O;
 				break;
-			case 4:
+			case 4:				
 				nextPiece.GetComponent<Image>().sprite = S;
 				break;
-			case 5:
+			case 5:				
 				nextPiece.GetComponent<Image>().sprite = L;
 				break;
-			case 6:
+			case 6:				
 				nextPiece.GetComponent<Image>().sprite = I;
 				break;
 		}
@@ -98,7 +98,7 @@ public class RandomGenerator : MonoBehaviour
         return mRandomPieceCurrent;
     }
 
-    void SetCurrentPiece()
+    public void SetCurrentPiece()
     {
         mRandomPieceCurrent = mRandomPieceNext;
 
@@ -108,36 +108,57 @@ public class RandomGenerator : MonoBehaviour
 				ScoreManager.NumTStat += 1;
 				ScoreManager.StrTStat = ScoreManager.NumTStat.ToString().PadLeft(2, '0');
 				tStat.GetComponent<Text>().text = ScoreManager.StrTStat;
+				Grid.OldPos[1] = new Vector2Int(1, 0);
+				Grid.OldPos[2] = new Vector2Int(-1, 0);
+				Grid.OldPos[3] = new Vector2Int(0, 1);
 				break;
 			case 1:
 				ScoreManager.NumJStat += 1;
 				ScoreManager.StrJStat = ScoreManager.NumJStat.ToString().PadLeft(2, '0');
 				jStat.GetComponent<Text>().text = ScoreManager.StrJStat;
+				Grid.OldPos[1] = new Vector2Int(0, -1);
+				Grid.OldPos[2] = new Vector2Int(0, 1);
+				Grid.OldPos[3] = new Vector2Int(-1, 1);
 				break;
 			case 2:
 				ScoreManager.NumZStat += 1;
 				ScoreManager.StrZStat = ScoreManager.NumZStat.ToString().PadLeft(2, '0');
 				zStat.GetComponent<Text>().text = ScoreManager.StrZStat;
+				Grid.OldPos[1] = new Vector2Int(1, 0);
+				Grid.OldPos[2] = new Vector2Int(0, -1);
+				Grid.OldPos[3] = new Vector2Int(-1, -1);
 				break;
 			case 3:
 				ScoreManager.NumOStat += 1;
 				ScoreManager.StrOStat = ScoreManager.NumOStat.ToString().PadLeft(2, '0');
 				oStat.GetComponent<Text>().text = ScoreManager.StrOStat;
+				Grid.OldPos[1] = new Vector2Int(1, 0);
+				Grid.OldPos[2] = new Vector2Int(0, 1);
+				Grid.OldPos[3] = new Vector2Int(1, 1);
 				break;
 			case 4:
 				ScoreManager.NumSStat += 1;
 				ScoreManager.StrSStat = ScoreManager.NumSStat.ToString().PadLeft(2, '0');
 				sStat.GetComponent<Text>().text = ScoreManager.StrSStat;
+				Grid.OldPos[1] = new Vector2Int(1, 0);
+				Grid.OldPos[2] = new Vector2Int(0, 1);
+				Grid.OldPos[3] = new Vector2Int(-1, 1);
 				break;
 			case 5:
 				ScoreManager.NumLStat += 1;
 				ScoreManager.StrLStat = ScoreManager.NumLStat.ToString().PadLeft(2, '0');
 				lStat.GetComponent<Text>().text = ScoreManager.StrLStat;
+				Grid.OldPos[1] = new Vector2Int(0, -1);
+				Grid.OldPos[2] = new Vector2Int(0, 1);
+				Grid.OldPos[3] = new Vector2Int(1, 1);
 				break;
 			case 6:
 				ScoreManager.NumIStat += 1;
 				ScoreManager.StrIStat = ScoreManager.NumIStat.ToString().PadLeft(2, '0');
 				iStat.GetComponent<Text>().text = ScoreManager.StrIStat;
+				Grid.OldPos[1] = new Vector2Int(0, -1);
+				Grid.OldPos[2] = new Vector2Int(0, 1);
+				Grid.OldPos[3] = new Vector2Int(0, 2);
 				break;
 		}
 	}

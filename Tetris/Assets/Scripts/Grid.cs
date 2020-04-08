@@ -10,9 +10,10 @@ public class Grid : MonoBehaviour
 	static public int PieceRow = 5;
 	static public int CellSize = 10;
 	static int MaxBlocks = 4;
-	static public int[] CheckLR;
-	static public int[] CheckUD;
+	//static public int[] CheckLR;
+	//static public int[] CheckUD;
 	static public bool[][] LockedPiece;
+	static public Vector2Int StartLocation = new Vector2Int(110, 260);
 
 	static public Vector2Int[] NewPos = new Vector2Int[MaxBlocks];
 	static public Vector2Int[] OldPos = new Vector2Int[MaxBlocks];
@@ -26,11 +27,10 @@ public class Grid : MonoBehaviour
 			{
 				if (PieceRow == j && PieceColumn == i)
 				{
-					OldPos[0] = new Vector2Int(180, 170);
-					OldPos[1] = new Vector2Int(170, 170);
-					OldPos[2] = new Vector2Int(190, 170);
-					OldPos[3] = new Vector2Int(180, 160);
-					//pieceshape()
+					//OldPos[0] = new Vector2Int(180, 170);
+					//OldPos[1] = new Vector2Int(170, 170);
+					//OldPos[2] = new Vector2Int(190, 170);
+					//OldPos[3] = new Vector2Int(180, 160);
 					MovementCalc();
 				}
 			}
@@ -46,10 +46,10 @@ public class Grid : MonoBehaviour
 			{
 				if (PieceRow == j && PieceColumn == i)
 				{
-					OldPos[0] = new Vector2Int(180, 170);
-					OldPos[1] = new Vector2Int(170, 170);
-					OldPos[2] = new Vector2Int(190, 170);
-					OldPos[3] = new Vector2Int(180, 160);
+					//OldPos[0] = new Vector2Int(180, 170);
+					//OldPos[1] = new Vector2Int(170, 170);
+					//OldPos[2] = new Vector2Int(190, 170);
+					//OldPos[3] = new Vector2Int(180, 160);
 					//pieceshape()
 					MovementCalc();
 				}
