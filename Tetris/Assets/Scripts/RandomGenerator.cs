@@ -46,12 +46,6 @@ public class RandomGenerator : MonoBehaviour
         SetNextPiece();
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
-		
-	}
-
     int GetNextPiece()
     {
         return mRandomPieceNext;
@@ -60,7 +54,6 @@ public class RandomGenerator : MonoBehaviour
 	public void SetNextPiece()
 	{
 		mRandomPieceNext = (Random.Range(0, 7));
-		print(mRandomPieceNext);
 		switch (mRandomPieceNext)
 		{
 			case 0:				

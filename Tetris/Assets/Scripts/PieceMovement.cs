@@ -20,7 +20,6 @@ public class PieceMovement : MonoBehaviour
         sidePiece3 = GameObject.Find("CurrentPiece4");
 
         nextPiece = GameObject.Find("GameBackground");
-
     }
 
     // Update is called once per frame
@@ -41,14 +40,13 @@ public class PieceMovement : MonoBehaviour
             Grid.PieceRow++;
         }
 
-
-        if (Input.GetKey(KeyCode.DownArrow) && Grid.PieceColumn > -22 && (Grid.PieceColumn - Grid.OldPos[1].y) > -22  && (Grid.PieceColumn - Grid.OldPos[2].y) > -22 && (Grid.PieceColumn - Grid.OldPos[3].y) > -22 || (Timer.PieceDrop >= Timer.DropTime) && Grid.PieceColumn > -22)
+        if (Input.GetKey(KeyCode.DownArrow) && Grid.PieceColumn > -22 && (Grid.PieceColumn - Grid.OldPos[1].y) > -22 && (Grid.PieceColumn - Grid.OldPos[2].y) > -22 && (Grid.PieceColumn - Grid.OldPos[3].y) > -22 || (Timer.PieceDrop >= Timer.DropTime) && Grid.PieceColumn > -22)
         {
             Grid.PieceColumn--;
             Timer.Reset();
         }
 
-        else if (Grid.PieceColumn <= -21 || (Grid.PieceColumn + Grid.OldPos[1].y) <= -21 || (Grid.PieceColumn + Grid.OldPos[2].y) <= -21 || (Grid.PieceColumn + Grid.OldPos[3].y) <= -21 )
+        else if (Grid.PieceColumn <= -21 || (Grid.PieceColumn + Grid.OldPos[1].y) <= -21 || (Grid.PieceColumn + Grid.OldPos[2].y) <= -21 || (Grid.PieceColumn + Grid.OldPos[3].y) <= -21)
         {
             nextPiece.GetComponent<Grid>().LockedGrid();
             Grid.PieceRow = 5;

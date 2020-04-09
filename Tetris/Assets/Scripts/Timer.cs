@@ -11,12 +11,6 @@ public class Timer : MonoBehaviour
 
     public static int PieceDrop = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +19,6 @@ public class Timer : MonoBehaviour
 
     public static void Reset()
     {
-            DropTime = Speed / 4;
+        DropTime = Speed / 4;
     }
 }
