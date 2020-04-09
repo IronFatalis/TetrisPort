@@ -43,18 +43,12 @@ public class RandomGenerator : MonoBehaviour
 
 		SetNextPiece();
         SetCurrentPiece();
-		print("set");
         SetNextPiece();
 	}
 
     // Update is called once per frame
     void Update()
     {
-		// if piece locks
-		//setCurrentPiece()
-		//SetNextPiece();
-
-
 		
 	}
 

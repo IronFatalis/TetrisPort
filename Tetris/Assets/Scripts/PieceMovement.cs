@@ -39,19 +39,18 @@ public class PieceMovement : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.RightArrow) && Grid.PieceRow < 10 && (Grid.PieceRow + Grid.OldPos[1].x) < 10 && (Grid.PieceRow + Grid.OldPos[2].x) < 10 && (Grid.PieceRow + Grid.OldPos[3].x) < 10)
         {
             Grid.PieceRow++;
-
         }
 
-        if (Input.GetKey(KeyCode.DownArrow) && Grid.PieceColumn > -22 || (Timer.PieceDrop >= Timer.DropTime) && Grid.PieceColumn > -22)
+
+        if (Input.GetKey(KeyCode.DownArrow) && Grid.PieceColumn > -22 && (Grid.PieceColumn - Grid.OldPos[1].y) > -22  && (Grid.PieceColumn - Grid.OldPos[2].y) > -22 && (Grid.PieceColumn - Grid.OldPos[3].y) > -22 || (Timer.PieceDrop >= Timer.DropTime) && Grid.PieceColumn > -22)
         {
             Grid.PieceColumn--;
-            
-
-            print(Grid.PieceColumn);
             Timer.Reset();
         }
-        else if (Grid.PieceColumn <= -22)
+
+        else if (Grid.PieceColumn <= -21 || (Grid.PieceColumn + Grid.OldPos[1].y) <= -21 || (Grid.PieceColumn + Grid.OldPos[2].y) <= -21 || (Grid.PieceColumn + Grid.OldPos[3].y) <= -21 )
         {
+            nextPiece.GetComponent<Grid>().LockedGrid();
             Grid.PieceRow = 5;
             Grid.PieceColumn = 1;
 
@@ -92,7 +91,6 @@ public class PieceMovement : MonoBehaviour
         {
             nextPiece.GetComponent<Grid>().LockedGrid();
         }
-
-
     }
+    
 }
