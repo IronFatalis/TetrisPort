@@ -14,6 +14,11 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    public static void Ticks()
+    {
         DropTime -= Time.deltaTime;
     }
 

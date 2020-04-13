@@ -4,12 +4,21 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
+    public static bool PieceLock = false;
+    private GameObject resetPiece;
+
+    void Start()
+    {
+        resetPiece = GameObject.Find("CurrentPiece1");
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "LockedPieces")
         {
-            //collision.gameObject.SendMessage("ApplyDamage", 10);
-            print("Lock");
+            print("Hit");
+            PieceLock = true;
+            //resetPiece.GetComponent<PieceMovement>().NewPiece();
         }
     }
 }

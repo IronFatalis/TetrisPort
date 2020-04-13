@@ -14,7 +14,7 @@ public class Grid : MonoBehaviour
 	static public int CellSize = 10;
 	static int MaxBlocks = 4;
 
-	static public Vector2Int StartLocation = new Vector2Int(150, 260);
+	static public Vector2Int StartLocation = new Vector2Int(280, 330);
 	static public Vector2Int[] NewPos = new Vector2Int[MaxBlocks];
 	static public Vector2Int[] OldPos = new Vector2Int[MaxBlocks];
 
